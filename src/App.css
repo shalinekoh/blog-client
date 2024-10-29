@@ -1,0 +1,38 @@
+body {
+  background-color: white;
+  color: black;
+}
+
+#root {
+  width: 100vw;
+  margin: 0 auto;
+  height: 100vh;
+  padding: 1rem 2rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+header nav {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+header .logo {
+  font-size: 1.8rem;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 900;
+  color: black;
+}
+
+header .nav-link {
+  color: black;
+}
+
+header .nav-link:hover {
+  text-decoration-line: underline;
+}
