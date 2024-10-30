@@ -11,7 +11,7 @@ function Header() {
           Our story
         </Link>
         <Link to="/signup" className="nav-link">
-          Sign in
+          Sign up
         </Link>
         <Link to="/login" className="nav-link">
           Log in
