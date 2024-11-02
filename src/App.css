@@ -22,6 +22,8 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 1rem 9rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
 header nav {
@@ -82,7 +84,8 @@ header .nav-link:hover {
   font-weight: 600;
 }
 
-#home-button:hover {
+#home-button:hover,
+button:hover {
   background-color: cornflowerblue;
   opacity: 0.9;
 }
@@ -108,7 +111,7 @@ header .nav-link:hover {
   }
 }
 
-.home-footer {
+.home-footer p {
   height: 60px;
   color: grey;
   font-family: Arial, sans-serif;
@@ -126,4 +129,43 @@ header .nav-link:hover {
 
 .home-footer a:hover {
   color: #ddd;
+}
+
+.signup-form,
+.login-form {
+  max-width: 100%;
+  height: calc(100vh - 140px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+input {
+  display: block;
+  width: 400px;
+  background-color: white;
+  margin-bottom: 5px;
+  padding: 10px 10px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  color: black;
+}
+
+button {
+  width: 400px;
+  display: block;
+  margin: 15px 0;
+}
+
+form h2,
+p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.box {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 80px 30px;
 }
