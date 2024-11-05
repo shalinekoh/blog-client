@@ -20,6 +20,7 @@ function LoginPage() {
       if (!response.ok) {
         setError(data.message);
       } else {
+        localStorage.setItem("token", data.token);
         // navigate to dashboard for now
         navigate("/dashboard");
       }
