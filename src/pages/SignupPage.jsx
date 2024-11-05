@@ -68,7 +68,9 @@ function SignupPage() {
             onChange={(e) => setConfirmpassword(e.target.value)}
           />
           {error && <p style={{ color: "red" }}>{error}</p>}
-          <button type="submit">Sign Up</button>
+          <button className="form-button" type="submit">
+            Sign Up
+          </button>
           <p>
             Already have an account? <Link to="/login">Log in.</Link>
           </p>

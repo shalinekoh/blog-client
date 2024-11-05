@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-function LoginPage() {
+function LoginPage({ setIsLoggedIn }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -21,6 +21,7 @@ function LoginPage() {
         setError(data.message);
       } else {
         localStorage.setItem("token", data.token);
+        setIsLoggedIn(true);
         // navigate to dashboard for now
         navigate("/dashboard");
       }
@@ -50,7 +51,9 @@ function LoginPage() {
             onChange={(e) => setPassword(e.target.value)}
           />
           {error && <p style={{ color: "red" }}>{error}</p>}
-          <button type="submit">Log In</button>
+          <button className="form-button" type="submit">
+            Log In
+          </button>
           <p>
             No account? <Link to="/signup">Sign up.</Link>
           </p>

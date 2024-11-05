@@ -28,9 +28,13 @@ header {
 
 header nav {
   display: flex;
-  gap: 15px;
   align-items: center;
-  font-size: 0.9rem;
+}
+
+nav div {
+  display: flex;
+  gap: 15px;
+  font-size: 1rem;
 }
 
 header .logo {
@@ -47,6 +51,20 @@ header .nav-link {
 
 header .nav-link:hover {
   font-weight: 600;
+}
+
+header button {
+  padding: 0;
+  background-color: white;
+  color: black;
+  border: 0;
+  margin: 0;
+  font-weight: 300;
+}
+
+header button:hover {
+  font-weight: 600;
+  background-color: white;
 }
 
 .home-container {
@@ -153,7 +171,7 @@ input {
   color: black;
 }
 
-button {
+.form-button {
   width: 400px;
   display: block;
   margin: 15px 0;
