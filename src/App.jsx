@@ -4,10 +4,19 @@ import Layout from "./components/Layout";
 import HomePage from "./pages/HomePage";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
-import useAuth from "./utils/useAuth";
+import NewPostPage from "./pages/NewPostPage";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function App() {
-  const { isLoggedIn, setIsLoggedIn, handleLogout } = useAuth();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  let navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setIsLoggedIn(false);
+    navigate("/");
+  };
+
   return (
     <Routes>
       <Route
@@ -20,6 +29,10 @@ function App() {
         <Route
           path="/login"
           element={<LoginPage setIsLoggedIn={setIsLoggedIn} />}
+        />
+        <Route
+          path="/create-post"
+          element={<NewPostPage isLoggedIn={isLoggedIn} />}
         />
       </Route>
     </Routes>
