@@ -6,6 +6,7 @@ function NewPostPage({ isLoggedIn }) {
   const [title, setTitle] = useState("");
   const [img, setImg] = useState(null);
   const [content, setContent] = useState("");
+  const [description, setDescription] = useState("");
   const [error, setError] = useState("");
   let navigate = useNavigate();
 
@@ -14,6 +15,7 @@ function NewPostPage({ isLoggedIn }) {
 
     const formData = new FormData();
     formData.append("title", title);
+    formData.append("description", description);
     formData.append("content", content);
     if (img) {
       formData.append("fileupload", img);
@@ -32,6 +34,7 @@ function NewPostPage({ isLoggedIn }) {
         console.log(result);
         setTitle("");
         setContent("");
+        setDescription("");
         setImg(null);
         navigate("/dashboard");
       }
@@ -50,6 +53,12 @@ function NewPostPage({ isLoggedIn }) {
             placeholder="Post Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Post Description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
           />
           <input
             type="file"

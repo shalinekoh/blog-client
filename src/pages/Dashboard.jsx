@@ -39,9 +39,12 @@ function Dashboard() {
                 <p> {post.User.username}</p>
                 <time>{format(post.createdAt, "MMM dd, yyyy")}</time>
               </div>
-              <div dangerouslySetInnerHTML={{ __html: post.content }} />
+              <p>{post.description}</p>
+              {/* <div dangerouslySetInnerHTML={{ __html: post.content }} /> */}
             </div>
-            <div>{post.image && <img src={post.image} />}</div>
+            <div className="image-div">
+              {post.image && <img src={post.image} />}
+            </div>
           </li>
         ))}
       </ul>
@@ -49,7 +52,7 @@ function Dashboard() {
         <h2>Today's pick</h2>
         {randomPosts &&
           randomPosts.map((randomPost) => (
-            <div id={randomPost.id}>
+            <div key={randomPost.id}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="1em"
@@ -96,7 +99,6 @@ function Dashboard() {
                 </path>
               </svg>
               <p id="username">{randomPost.User.username}</p>
-
               <p id="title">{randomPost.title}</p>
             </div>
           ))}

@@ -221,6 +221,12 @@ form p {
   display: flex;
   gap: 6px;
   flex-direction: column;
+  justify-content: center;
+}
+
+.dashboard .image-div {
+  display: flex;
+  justify-content: center;
 }
 
 .dashboard img {
