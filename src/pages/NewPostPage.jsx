@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { Editor } from "@tinymce/tinymce-react";
+import { useNavigate } from "react-router-dom";
 
 function NewPostPage({ isLoggedIn }) {
   const [title, setTitle] = useState("");
   const [img, setImg] = useState(null);
   const [content, setContent] = useState("");
   const [error, setError] = useState("");
+  let navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,6 +33,7 @@ function NewPostPage({ isLoggedIn }) {
         setTitle("");
         setContent("");
         setImg(null);
+        navigate("/dashboard");
       }
     } catch (error) {
       setError("An error occured. Please try again. ");

@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import NewPostPage from "./pages/NewPostPage";
+import Dashboard from "./pages/Dashboard";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -24,7 +25,7 @@ function App() {
         element={<Layout isLoggedIn={isLoggedIn} handleLogout={handleLogout} />}
       >
         <Route index element={<HomePage />} />
-        <Route path="/dashboard" element={<div>Dashboard</div>} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route
           path="/login"
