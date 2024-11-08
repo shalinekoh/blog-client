@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { format } from "date-fns";
+import { Link } from "react-router-dom";
 
 function Dashboard() {
   const [posts, setPosts] = useState([]);
@@ -34,16 +35,19 @@ function Dashboard() {
         {posts.map((post) => (
           <li key={post.id}>
             <div>
-              <h2>{post.title}</h2>
+              <Link style={{ color: "inherit" }} to={`/post/${post.id}`}>
+                <h2>{post.title}</h2>
+              </Link>
               <div className="post-info">
                 <p> {post.User.username}</p>
                 <time>{format(post.createdAt, "MMM dd, yyyy")}</time>
               </div>
               <p>{post.description}</p>
-              {/* <div dangerouslySetInnerHTML={{ __html: post.content }} /> */}
             </div>
             <div className="image-div">
-              {post.image && <img src={post.image} />}
+              <Link to={`/post/${post.id}`}>
+                {post.image && <img src={post.image} />}
+              </Link>
             </div>
           </li>
         ))}
@@ -99,7 +103,9 @@ function Dashboard() {
                 </path>
               </svg>
               <p id="username">{randomPost.User.username}</p>
-              <p id="title">{randomPost.title}</p>
+              <Link to={`/post/${randomPost.id}`}>
+                <p id="title">{randomPost.title}</p>
+              </Link>
             </div>
           ))}
       </div>

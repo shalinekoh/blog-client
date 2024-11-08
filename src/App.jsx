@@ -8,6 +8,7 @@ import NewPostPage from "./pages/NewPostPage";
 import Dashboard from "./pages/Dashboard";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Post from "./pages/PostPage";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -27,6 +28,7 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/signup" element={<SignupPage />} />
+        <Route path="/post/:id" element={<Post />} />
         <Route
           path="/login"
           element={<LoginPage setIsLoggedIn={setIsLoggedIn} />}

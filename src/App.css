@@ -136,6 +136,7 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-top: rgba(0, 0, 0, 0.1) solid 1px;
 }
 
 .home-footer a {
@@ -162,6 +163,7 @@ button:hover {
 
 .newpost-container {
   min-height: calc(100vh - 140px);
+  padding-bottom: 35px;
 }
 
 .newpost-form {
@@ -170,6 +172,10 @@ button:hover {
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+
+.newpost-form input {
+  width: 100%;
 }
 
 input {
@@ -201,14 +207,16 @@ form p {
 }
 
 .dashboard {
-  max-width: 70%;
+  max-width: 75%;
   margin: 0 auto;
   padding: 30px 0 0 0;
   display: grid;
-  grid-template-columns: 4fr 1fr;
+  grid-template-columns: 3fr 1.2fr;
   gap: 80px;
 }
-
+.dashboard h2:hover {
+  text-decoration: underline;
+}
 .dashboard li {
   display: grid;
   grid-template-columns: 3fr 1fr;
@@ -251,6 +259,7 @@ form p {
 .todays-pick h2 {
   margin: 100px 0 15px 0;
 }
+
 .todays-pick svg {
   display: inline-block;
   margin-right: 10px;
@@ -265,4 +274,51 @@ form p {
   font-weight: 700;
   font-size: 1.1rem;
   margin-bottom: 20px;
+}
+
+#title:hover {
+  text-decoration: underline;
+}
+
+.post-page {
+  width: 60%;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.post-page img {
+  width: 100%;
+  height: auto;
+}
+
+.post-page .description {
+  font-weight: 300;
+  color: grey;
+  font-size: 1.5rem;
+}
+
+.post-page-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  color: rgb(136, 135, 135);
+  padding: 0 10px;
+}
+
+.post-page-info p {
+  font-weight: 800;
+}
+
+.post-page .content {
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+
+.post-page > * {
+  margin-bottom: 20px;
+}
+
+.user {
+  display: flex;
+  gap: 10px;
 }
