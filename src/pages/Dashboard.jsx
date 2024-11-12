@@ -20,7 +20,6 @@ function Dashboard() {
         const data = await response.json();
         setPosts(data.posts);
         setRandomPosts(data.randomPosts);
-        console.log(randomPosts);
       } catch (error) {
         setError(data.message);
       }

@@ -2,9 +2,10 @@ import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
 
 function Header({ isLoggedIn, handleLogout }) {
+  const navigateDest = isLoggedIn ? "/dashboard" : "/";
   return (
     <header>
-      <Link to="/" className="logo">
+      <Link to={navigateDest} className="logo">
         Bits & Bytes
       </Link>
 

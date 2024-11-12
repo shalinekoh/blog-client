@@ -2,13 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function NavBar({ isLoggedIn, handleLogout }) {
+  const username = localStorage.getItem("username");
   return (
     <nav>
       {isLoggedIn ? (
         <div>
-          <Link to="/dashboard" className="nav-link">
-            Dashboard
-          </Link>
+          <p>
+            Welcome back,{" "}
+            <Link id="user-link" to={`/profile/${username}`}>
+              {username}
+            </Link>
+          </p>
+
           <Link to="/create-post" className="nav-link">
             Create post
           </Link>
