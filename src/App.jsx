@@ -9,12 +9,18 @@ import Dashboard from "./pages/Dashboard";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Post from "./pages/PostPage";
+import Profile from "./pages/ProfilePage";
+import EditPost from "./pages/EditPost";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isUser, setIsUser] = useState(false);
+
   let navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("username");
+    localStorage.removeItem("userId");
     setIsLoggedIn(false);
     navigate("/");
   };
@@ -36,6 +42,20 @@ function App() {
         <Route
           path="/create-post"
           element={<NewPostPage isLoggedIn={isLoggedIn} />}
+        />
+        <Route
+          path="/profile/:username"
+          element={
+            <Profile
+              isLoggedIn={isLoggedIn}
+              isUser={isUser}
+              setIsUser={setIsUser}
+            />
+          }
+        />
+        <Route
+          path="/edit/:id"
+          element={<EditPost isLoggedIn={isLoggedIn} isUser={isUser} />}
         />
       </Route>
     </Routes>

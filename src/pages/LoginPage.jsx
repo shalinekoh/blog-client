@@ -21,9 +21,10 @@ function LoginPage({ setIsLoggedIn }) {
         setError(data.message);
       } else {
         localStorage.setItem("token", data.token);
+        localStorage.setItem("username", username);
+        localStorage.setItem("userId", data.id);
         setIsLoggedIn(true);
-        // navigate to dashboard for now
-        navigate("/dashboard");
+        navigate(`/profile/${username}`);
       }
     } catch (error) {
       console.error("Login error:", error);

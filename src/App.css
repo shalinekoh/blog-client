@@ -37,6 +37,14 @@ nav div {
   font-size: 1rem;
 }
 
+#user-link {
+  margin-right: 25px;
+  font-weight: 900;
+}
+#user-link:hover {
+  text-decoration: underline;
+}
+
 header .logo {
   font-size: 2rem;
   font-family: "Radio Canada", sans-serif;
@@ -294,7 +302,7 @@ form p {
 .post-page .description {
   font-weight: 300;
   color: grey;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .post-page-info {
@@ -311,7 +319,7 @@ form p {
 
 .post-page .content {
   font-size: 1.2rem;
-  line-height: 2rem;
+  line-height: 2.5rem;
 }
 
 .post-page > * {
@@ -321,4 +329,46 @@ form p {
 .user {
   display: flex;
   gap: 10px;
+}
+
+.profile {
+  min-height: calc(100vh - 140px);
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 30px;
+  color: black;
+}
+
+.profile h2 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.profile .list-items {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  border-bottom: rgba(0, 0, 0, 0.1) solid 1px;
+}
+
+.profile .buttons {
+  display: flex;
+  gap: 25px;
+  justify-content: flex-end;
+  align-content: center;
+}
+
+.profile time {
+  font-weight: 300;
+  color: rgb(85, 82, 82);
+}
+
+#profile-title {
+  color: rgb(61, 59, 59);
+  font-weight: 700;
+}
+
+#profile-title:hover {
+  text-decoration: underline;
 }
