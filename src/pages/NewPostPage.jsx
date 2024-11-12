@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Editor } from "@tinymce/tinymce-react";
 import { useNavigate } from "react-router-dom";
+import PostEditor from "../components/PostEditor";
 
 function NewPostPage({ isLoggedIn }) {
   const [title, setTitle] = useState("");
@@ -31,7 +31,6 @@ function NewPostPage({ isLoggedIn }) {
       if (!response.ok) {
         setError(response.message);
       } else {
-        console.log(result);
         setTitle("");
         setContent("");
         setDescription("");
@@ -44,69 +43,20 @@ function NewPostPage({ isLoggedIn }) {
   };
 
   return (
-    <div className="newpost-container">
-      {isLoggedIn ? (
-        <form className="newpost-form" onSubmit={handleSubmit}>
-          <h2>Create New Post</h2>
-          <input
-            type="text"
-            placeholder="Post Title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Post Description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-          <input
-            type="file"
-            placeholder="Upload your image"
-            onChange={(e) => setImg(e.target.files[0])}
-          />
-          <Editor
-            apiKey="fula1oja2qjnha6ze6vmo0sc4owj4xawajoftuns2ublwezt"
-            value={content}
-            init={{
-              height: 500,
-              menubar: false,
-              plugins: [
-                "advlist",
-                "autolink",
-                "lists",
-                "link",
-                "image",
-                "charmap",
-                "preview",
-                "anchor",
-                "searchreplace",
-                "visualblocks",
-                "code",
-                "fullscreen",
-                "insertdatetime",
-                "media",
-                "table",
-                "code",
-                "wordcount",
-              ],
-              toolbar:
-                "undo redo | blocks | " +
-                "bold italic forecolor | alignleft aligncenter " +
-                "alignright alignjustify | bullist numlist outdent indent | " +
-                "image",
-              content_style:
-                "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
-            }}
-            onEditorChange={(e) => setContent(e)}
-          />
-          {error && <p style={{ color: "red" }}>{error}</p>}
-          <button type="submit">Submit</button>
-        </form>
-      ) : (
-        <p>Please log in first.</p>
-      )}
-    </div>
+    <PostEditor
+      isLoggedIn={isLoggedIn}
+      pageTitle="Create New Post"
+      title={title}
+      setTitle={setTitle}
+      img={img}
+      setImg={setImg}
+      content={content}
+      setContent={setContent}
+      description={description}
+      setDescription={setDescription}
+      handleSubmit={handleSubmit}
+      error={error}
+    />
   );
 }
 
