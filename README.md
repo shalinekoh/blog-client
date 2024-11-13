@@ -1,8 +1,40 @@
-# React + Vite
+# Bits & Bytes Blog Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A blogging platform where users can create, read, edit, and delete posts. The platform also includes a user profile page to view and manage personal posts, a homepage showcasing the latest posts, and a featured "Today's Pick" section with a random selection of blog entries.
 
-Currently, two official plugins are available:
+This is the frontend of the application.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Links
+
+- <a href="">Live Demo (may take some time to load)</a>
+- <a href="https://github.com/shalinekoh/blog-api">Backend repository</a>
+
+## Features
+
+- **User Authentication**: Sign up, log in, and log out functionality.
+- **Create & Manage Posts**: Logged-in users can create new posts with title, description, content, and optional image upload.
+- **Rich Text Editor**: Create and edit blog posts with TinyMCE, allowing for rich text formatting and image uploads.
+- **User Profiles**: Each user has a profile page that supports CRUD operations to create, view, edit, or delete their posts.
+- **Homepage**: Displays a list of all blog posts with random featured posts in "Today's Pick" section.
+- **Post Details**: Each post includes information about the author, date, description, and content.
+- **Protected Routes**: Access to certain pages (e.g., post creation and profile) requires authentication.
+- **Dynamic Error Handling**: Provides users with meaningful error messages on unsuccessful actions.
+
+## Tech Stack
+
+- **Frontend**: React, React Router
+- **Backend**: Node.js, Express
+- **Database**: PostgreSQL, managed by Prisma ORM
+- **Authentication**: JSON Web Tokens (JWT) stored in localStorage for persistent login and authentication.
+- **File Uploads**: Multer for image uploads, integrated with Cloudinary for cloud storage
+- **Validation**: Express-validator for form validation
+- **Styling**: CSS
+- **Other Dependencies**: dotenv for environment configuration, bcryptjs for password hashing, and cookie-parser for handling cookies
+
+## Screenshots
+
+<img src="public/img/HomePage.png"/>
+<img src="public/img/SignUpPage.png"/>
+<img src="public/img/Dashboard.png"/>
+<img src="public/img/MyPostPage.png"/>
+<img src="public/img/EditPostPage.png"/>
