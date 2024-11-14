@@ -22,7 +22,7 @@ function NewPostPage({ isLoggedIn }) {
     }
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:8080/posts", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/posts`, {
         method: "POST",
         body: formData,
         headers: { Authorization: `Bearer ${token}` },

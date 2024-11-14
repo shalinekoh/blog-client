@@ -10,7 +10,7 @@ function Dashboard() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch("http://localhost:8080/posts", {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/posts`, {
           method: "GET",
           headers: { "Content-Type": "application/json" },
         });

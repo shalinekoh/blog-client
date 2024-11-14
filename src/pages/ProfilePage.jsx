@@ -15,7 +15,9 @@ function Profile({ isLoggedIn, isUser, setIsUser }) {
       const fetchUserPosts = async () => {
         try {
           const response = await fetch(
-            `http://localhost:8080/profile/${localStorage.getItem("userId")}`,
+            `${import.meta.env.VITE_API_URL}/profile/${localStorage.getItem(
+              "userId"
+            )}`,
             {
               method: "GET",
               headers: { "Content-Type": "application/json" },

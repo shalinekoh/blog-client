@@ -10,10 +10,13 @@ function Post() {
   useEffect(() => {
     const fetchPost = async (id) => {
       try {
-        const response = await fetch(`http://localhost:8080/post/${id}`, {
-          method: "GET",
-          headers: { "Content-Type": "application/json" },
-        });
+        const response = await fetch(
+          `${import.meta.env.VITE_API_URL}/post/${id}`,
+          {
+            method: "GET",
+            headers: { "Content-Type": "application/json" },
+          }
+        );
         if (!response.ok) {
           setError("Error fetching post. Please try again. ");
         }

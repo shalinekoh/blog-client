@@ -17,10 +17,13 @@ const EditPost = ({ isLoggedIn, isUser }) => {
     if (isLoggedIn && isUser) {
       const fetchPost = async () => {
         try {
-          const response = await fetch(`http://localhost:8080/post/${id}`, {
-            method: "GET",
-            headers: { "Content-Type": "application/json" },
-          });
+          const response = await fetch(
+            `${import.meta.env.VITE_API_URL}/post/${id}`,
+            {
+              method: "GET",
+              headers: { "Content-Type": "application/json" },
+            }
+          );
 
           if (!response.ok) {
             setError(response.message);
@@ -56,11 +59,14 @@ const EditPost = ({ isLoggedIn, isUser }) => {
 
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch(`http://localhost:8080/post/${id}`, {
-        method: "PUT",
-        body: formData,
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/post/${id}`,
+        {
+          method: "PUT",
+          body: formData,
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
 
       const result = await response.json();
 

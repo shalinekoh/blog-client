@@ -14,6 +14,7 @@ const PostEditor = ({
   handleSubmit,
   error,
 }) => {
+  const textEditorAPIKey = import.meta.env.VITE_TinyMCE_API_KEY;
   return (
     <div className="newpost-container">
       {isLoggedIn ? (
@@ -37,7 +38,7 @@ const PostEditor = ({
             onChange={(e) => setImg(e.target.files[0])}
           />
           <Editor
-            apiKey="fula1oja2qjnha6ze6vmo0sc4owj4xawajoftuns2ublwezt"
+            apiKey={textEditorAPIKey}
             value={content}
             init={{
               height: 500,

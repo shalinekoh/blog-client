@@ -11,13 +11,16 @@ const DeletePostButton = ({ postId, isUser, token }) => {
     if (!confirmed) return;
 
     try {
-      const response = await fetch(`http://localhost:8080/post/${postId}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/post/${postId}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       const result = await response.json();
 

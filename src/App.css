@@ -221,6 +221,7 @@ form p {
   display: grid;
   grid-template-columns: 3fr 1.2fr;
   gap: 80px;
+  min-height: calc(100vh - 140px);
 }
 .dashboard h2:hover {
   text-decoration: underline;
